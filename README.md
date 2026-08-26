@@ -6,12 +6,7 @@ I built this as a take-home project for the Aster & Row AI support agent assignm
 
 ## Demo Video
 
-<video src="demo_video.mp4" controls width="100%"></video>
-
-<!-- If the video above doesn't play, paste the GitHub CDN link below after uploading via an Issue -->
-<!-- https://github.com/user-attachments/assets/YOUR-VIDEO-ID -->
-
-**[▶ Click here to watch the demo](demo_video.mp4)**
+https://github.com/user-attachments/assets/aba08d81-5a24-4d58-9d4e-6f16fd1b0a11
 
 The video covers:
 - A knowledge-base question with source citations

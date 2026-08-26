@@ -100,7 +100,7 @@ def answer_question(messages):
         tool = "optional_sanitized_lookup"
     
     chunks = get_retriever().retrieve(rewrite_query_with_context(messages[:-1], query), top_k=4)
-    low_conf = not chunks or chunks[0]["final_score"] < 0.26
+    low_conf = (not chunks or chunks[0]["final_score"] < 0.26) and not order_id
     evidence = "\n\n".join(f"--- EVIDENCE {i+1} ---\nSource: {c['chunk']['source']} ({c['chunk']['heading']})\nContent: {c['chunk']['text']}" for i, c in enumerate(chunks)) if not low_conf else ""
     
     safe_order = remove_private_customer_details(order)

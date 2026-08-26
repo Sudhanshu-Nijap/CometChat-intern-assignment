@@ -18,8 +18,6 @@ def main():
     print("      Aster & Row Customer Support Agent (CLI)")
     print("=" * 60)
     print("Ask about policies (returns, shipping, warranty) or look up order status.")
-    print("Type 'quit' or 'exit' to end the session.")
-    print("-" * 60)
     
     session_messages = []
     

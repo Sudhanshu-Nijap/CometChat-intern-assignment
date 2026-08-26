@@ -1,4 +1,9 @@
 import sys
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  # suppress TF/oneDNN noise
+os.environ.setdefault("TF_ENABLE_ONEDNN_OPTS", "0")
+import warnings
+warnings.filterwarnings("ignore")
 from app.agent import answer_question
 
 def main():

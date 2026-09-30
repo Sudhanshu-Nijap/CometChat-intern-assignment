@@ -12,6 +12,11 @@ _embedding_model_instance = None
 def get_embedding_model():
     global _embedding_model_instance
     if _embedding_model_instance is None:
+        # Prevent OOM crashes on Render's 512MB free tier
+        if os.environ.get("RENDER") or os.environ.get("PORT"):
+            print("Running on cloud free tier. Disabling heavy semantic model to prevent OOM crashes.")
+            return None
+            
         try:
             from sentence_transformers import SentenceTransformer
             print("Loading sentence-transformers model (all-MiniLM-L6-v2)...")

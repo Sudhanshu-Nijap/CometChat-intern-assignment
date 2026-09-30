@@ -67,6 +67,9 @@ class HybridRetriever:
         # 1. Semantic Similarity
         semantic_scores = np.zeros(len(self.chunks))
         emb_model = get_embedding_model()
+        if emb_model is None:
+            semantic_weight = 0.0
+            
         if emb_model and self.embeddings is not None:
             query_emb = emb_model.encode([query], show_progress_bar=False)
             # cosine_similarity returns matrix of shape (1, num_chunks)
